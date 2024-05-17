@@ -1,0 +1,31 @@
+#keyValue Pair
+name : Muhammad
+age : 30
+
+#object
+server : 
+  name : "cloud"
+  capacity: 500GB
+
+#list 
+social_media :
+  - Youtube
+  - facebook
+  - insta
+
+#list of object 
+list_of_servers : 
+  - server_1 :
+    name : "aws"
+    volume : 8gb
+  - server_2 :
+    name : gcp
+    volume : 5gb
+
+#multiline String
+testing : |
+  this 
+  is
+  Muhammad
+
+
