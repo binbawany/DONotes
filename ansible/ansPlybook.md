@@ -46,7 +46,6 @@ vim install_docker.yml
           apt_repository :
                 repo : deb https://download.docker.com/linux/ubuntu/ focal stable
                 state : present
-        
         - name : install Docker
           apt :
                 name : docker-co
