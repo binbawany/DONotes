@@ -42,7 +42,7 @@ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --
 echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 sudo apt-get update -y
-sudo apt-get install -y kubelet="1.29.0-*" kubectl="1.29.0-*" kubeadm="1.29.0-*"
+sudo apt-get install -y kubelet kubectl kubeadm
 sudo apt-get update -y
 sudo apt-get install -y jq
 
@@ -74,3 +74,8 @@ sudo kubeadm reset pre-flight checks
 #Paste the join command you got from the master node and append --v=5 at the end.
 sudo your-token --v=5
 
+
+#Ensure that necessary ports required by Calico are open on your nodes. Calico typically needs the following ports open:
+179 (BGP)
+5473 (Calico API)
+443 (kube-apiserver)
